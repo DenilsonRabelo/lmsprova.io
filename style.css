@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.top-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 3px 7px 5px;
+}
+
+button:active {
+    box-shadow: 2px 3px 1px;
+    transform: translate(4px, 6px);
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.left-nav {
+    width: 20vw;
+    height: 1200px;
+    background-color: #444;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 80vw;
+    height: 1200px;
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.loading-spinner {
+    width: 48px; /* define o altura */
+    height: 48px; /* define o tamanho */
+    border: 5px solid #FFF; /* define a cor da borda */
+    border-bottom-color: #FF3D00; /* define a cor da borda inferior */
+    border-radius: 50%; /* define o raio da borda */
+    display: inline-block; /* define o elemento como bloco */
+    box-sizing: border-box; /* define o box-sizing como border-box */
+    animation: rotation 1s linear infinite; /* define a animação e a duração da animação */
+}
+
+@keyframes rotation { /* define a animação */
+    0% {
+        transform: rotate(0deg); /* define o grau de rotação */
+    }
+
+    100% {
+        transform: rotate(360deg); /* define o grau de rotação */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .top-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .spinner {
+        padding-top: 200px;
+    }
+
+    article {
+        margin-top: 100px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .left-nav {
+        margin-top: 10px;
+        width: 100vw;
+        height: 100px;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .content {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .main {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+}
